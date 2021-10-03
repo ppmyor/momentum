@@ -1,0 +1,223 @@
+*   {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body    {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.status-bar {
+    background-color: rgba(202, 207, 216, 0.7);
+    width: 100%;
+    height: 22px;
+}
+
+.status-bar-contents    {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+}
+
+.left-contents  {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#logo   {
+    width: 14px;
+    height: 14px;
+}
+
+.left-contents h1   {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.right-contents    {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#wifi   {
+    width: 17px;
+    height: auto;
+}
+
+#battery    {
+    width: 23px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#user-ID, #clock, #month   {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+#date   {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.todo-area  {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 15px;
+    background-color: rgb(238, 238, 238);
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+
+#todo-form  {
+    display: flex;
+    justify-content: center;
+}
+
+#input-todo {
+    border: none;
+    border-radius: 40px;
+    background-color: #FFF;
+    width: 200px;
+    height: 26px;
+    padding-left: 15px;
+}
+
+
+#todo-list  {
+    list-style: none;
+    padding: 0;
+    color:rgb(99, 99, 99);
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+#todo-list li   {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#todo-list button   {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.done   {
+    text-decoration: line-through;
+}
+
+.side-bar   {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    top: 22px;
+    right: 0px;
+    width: 500px;
+    height: auto;
+}
+
+#weather, #d-day  {
+    background-color: #FFF;
+    border-radius: 30px;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+#weather    {
+    transition: transform 300ms ease-in-out;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.2);
+}
+
+#weather:hover  {
+    transform: translateY(-3px);
+}
+
+#weather span   {
+    display: block;
+}
+
+#weather span:first-child   {
+    font-size: 23px;
+    font-weight: 300;
+}
+
+
+#weather span:nth-child(2)    {
+    font-size: 35px;
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+#weather span:last-child    {
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#weather span:nth-child(2)::after {
+    content: '°';
+}
+
+#d-day  {
+    transition: transform 300ms ease-in-out;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.2);
+}
+
+#d-day:hover    {
+    transform: translateY(-3px);
+}
+
+#d-day h2   {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+#d-day span {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-left: 80px;
+}
+
+#quote {
+    background-color: #FFF;
+    border-radius: 30px;
+    width: 450px;
+    height: 200px;
+    margin: 15px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: transform 300ms ease-in-out;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.2);
+}
+
+#quote:hover    {
+    transform: translateY(-3px);
+}

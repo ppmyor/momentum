@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum App</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar-contents">
+            <div class="left-contents">
+                <img src="./src/img/apple.png" alt="apple logo" id="logo" />
+                <h1>Momentum</h1>
+            </div>
+            <div class="right-contents">
+                <img src="./src/img/wi-fi.png" alt="wifi" id="wifi" />
+                <img src="./src/img/battery-1.png" alt="battery" id="battery" />
+                <h1 id="user-ID"></h1>
+                <span id="month"></span>
+                <span id="date"></span>
+                <span id="clock">00:00</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="todo-area">
+        <form id="todo-form">
+            <input type="text" placeholder="Write a To Do" id="input-todo"/>
+        </form>
+        <ul id="todo-list">
+        </ul>
+    </div>
+
+    <div class="side-bar">
+        <div id="weather">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="d-day">
+            <h2>Since<br />
+                I was<br />
+                born</h2>
+            <span></span>
+        </div>
+        <div id="quote" lang="ko">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script src="./src/background.js"></script>
+    <script src="./src/clock.js"></script>
+    <script src="./src/username.js"></script>
+    <script src="./src/todo.js"></script>
+    <script src="./src/weather.js"></script>
+    <script src="./src/date.js"></script>
+    <script src="./src/dday.js"></script>
+    <script src="./src/quotes.js"></script>
+</body>
+</html>

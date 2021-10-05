@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Momentum App</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,32 +28,36 @@
         </div>
     </div>
     
-    <div class="todo-area">
-        <form id="todo-form">
-            <input type="text" placeholder="Write a To Do" id="input-todo"/>
-        </form>
-        <ul id="todo-list">
-        </ul>
+    <div class="contents">
+        <div class="todo-area">
+            <form id="todo-form">
+                <input type="text" placeholder="Write a To Do" id="input-todo"/>
+            </form>
+            <ul id="todo-list">
+            </ul>
+        </div>
+    
+        <div class="side-bar">
+            <div class="small-content">
+                <div id="weather">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="d-day">
+                    <h2>Since<br />
+                        I was<br />
+                        born</h2>
+                    <span></span>
+                </div>
+            </div>
+            <div id="quote" lang="ko">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
-
-    <div class="side-bar">
-        <div id="weather">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="d-day">
-            <h2>Since<br />
-                I was<br />
-                born</h2>
-            <span></span>
-        </div>
-        <div id="quote" lang="ko">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
+    
     <script src="./src/background.js"></script>
     <script src="./src/clock.js"></script>
     <script src="./src/username.js"></script>

@@ -26,15 +26,16 @@ function updateTodo(id, target) {
 
 function doneTodo(event)    {
     const li = event.target.parentElement.parentElement;
+    const span = event.target.nextSibling;
     console.log(li.id);
     const targetToDo = toDos.find((toDo) => toDo.id === parseInt(li.id));
-    if(li.classList.contains(DONE_CLASSNAME))    {
-        li.classList.remove(DONE_CLASSNAME);
+    if(span.classList.contains(DONE_CLASSNAME))    {
+        span.classList.remove(DONE_CLASSNAME);
         targetToDo.done = false;
     }
     else    {
         targetToDo.done = true;
-        li.classList.add(DONE_CLASSNAME);
+        span.classList.add(DONE_CLASSNAME);
     }
     console.log(targetToDo, targetToDo.done);
     updateTodo(li.id, targetToDo);
@@ -43,17 +44,17 @@ function doneTodo(event)    {
 function paintToDo(newTodo)    {
     const li = document.createElement("li");
     li.id = newTodo.id;
-    if(newTodo.done === true)   {
-        li.classList.add(DONE_CLASSNAME);
-    } else  {
-        li.classList.remove(DONE_CLASSNAME);
-    }
     const div = document.createElement("div");
     const doneBtn = document.createElement("button");
     doneBtn.innerText = "✔️";
     doneBtn.addEventListener("click", doneTodo);
     const span = document.createElement("span");
     span.innerText = newTodo.text;
+    if(newTodo.done === true)   {
+        span.classList.add(DONE_CLASSNAME);
+    } else  {
+        span.classList.remove(DONE_CLASSNAME);
+    }
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "❌";
     deleteBtn.addEventListener("click", deleteTodo);

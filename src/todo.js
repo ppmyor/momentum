@@ -18,14 +18,36 @@ function deleteTodo(event)   {
     saveToDos();
 }
 
+function updateTodo(id, target) {
+    const idIndex = toDos.findIndex((toDo) => toDo.id === parseInt(id));
+    toDos[idIndex] = target;
+    saveToDos();
+}
+
 function doneTodo(event)    {
-    const li = event.target.parentElement;
-    li.classList.toggle(DONE_CLASSNAME);
+    const li = event.target.parentElement.parentElement;
+    console.log(li.id);
+    const targetToDo = toDos.find((toDo) => toDo.id === parseInt(li.id));
+    if(li.classList.contains(DONE_CLASSNAME))    {
+        li.classList.remove(DONE_CLASSNAME);
+        targetToDo.done = false;
+    }
+    else    {
+        targetToDo.done = true;
+        li.classList.add(DONE_CLASSNAME);
+    }
+    console.log(targetToDo, targetToDo.done);
+    updateTodo(li.id, targetToDo);
 }
 
 function paintToDo(newTodo)    {
     const li = document.createElement("li");
     li.id = newTodo.id;
+    if(newTodo.done === true)   {
+        li.classList.add(DONE_CLASSNAME);
+    } else  {
+        li.classList.remove(DONE_CLASSNAME);
+    }
     const div = document.createElement("div");
     const doneBtn = document.createElement("button");
     doneBtn.innerText = "✔️";
@@ -50,11 +72,11 @@ function handleToDoSubmit(event) {
     const newToDoObj = {
         text: newTodo,
         id: Date.now(),
+        done: false,
     };
     toDos.push(newToDoObj);
     paintToDo(newToDoObj);
     saveToDos();
-    doneTodo();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

@@ -66,6 +66,7 @@ button  {
     border: none;
     background-image: url("./img/arrow.png");
     background-color: transparent;
+    background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
     width: 17px;
